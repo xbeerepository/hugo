@@ -1,0 +1,17 @@
+schema-version: 1.0
+
+
+builder:
+  origin: ./hugo-builder
+  var:
+    version: v0.80.0
+
+
+provision:
+  - copy:
+      builder: hugo
+      todir: /usr/local/bin
+
+
+command:
+  hugo: hugo {{ .args }}

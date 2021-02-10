@@ -1,0 +1,6 @@
+labels:
+  osid: centos
+actions:
+  - pkg: gcc-c++
+  
+

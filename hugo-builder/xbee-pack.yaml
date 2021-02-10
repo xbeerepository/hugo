@@ -1,0 +1,22 @@
+schema-version: 1.0
+
+type: builder
+
+product: golang
+
+var:
+  version: v0.80.0
+
+provision:
+  - pkg: gcc
+  - git:
+      location: https://github.com/gohugoio/hugo.git
+      tag: "{% version %}"
+      directory: /hugo
+
+build:
+  - shell:
+      cmd: go install --tags extended
+      directory: /hugo
+  - download: /root/go/bin/hugo
+
