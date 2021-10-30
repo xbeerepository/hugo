@@ -18,6 +18,7 @@ user: "{% user %}"
 
 
 provision:
+  - pkg: git
   - copy:
       builder: hugo
       todir: /usr/local/bin
