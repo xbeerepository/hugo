@@ -2,21 +2,20 @@ schema-version: 1.0
 
 type: builder
 
-product: golang
+dependency: golang
 
 var:
-  version: v0.80.0
+  version: 0.88.1
 
 provision:
-  - pkg: gcc
-  - git:
-      location: https://github.com/gohugoio/hugo.git
-      tag: "{% version %}"
-      directory: /hugo
+  - pkg: build-essential
+  - url: 
+      from: https://github.com/gohugoio/hugo/archive/refs/tags/v{% version %}.tar.gz
+      todir: /hugo
 
 build:
   - shell:
       cmd: go install --tags extended
-      directory: /hugo
-  - download: /root/go/bin/hugo
+      directory: /hugo/hugo-{% version %}
+  - export: /root/go/bin/hugo
 

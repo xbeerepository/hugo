@@ -4,7 +4,7 @@ schema-version: 1.0
 builder:
   origin: ./hugo-builder
   var:
-    version: v0.80.0
+    version: 0.88.1
 
 
 provision:
