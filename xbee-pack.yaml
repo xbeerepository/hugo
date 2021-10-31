@@ -7,16 +7,6 @@ builder:
     version: 0.88.1
 
 
-var:
-  app: /app
-  user: default
-
-volumes:
-  - app:{% app %}:.
-directory: "{% app %}"
-user: "{% user %}"
-
-
 provision:
   - pkg: git
   - copy:
