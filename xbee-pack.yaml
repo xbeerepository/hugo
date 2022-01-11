@@ -1,14 +1,16 @@
 schema-version: 1.0
 
 
-builder:
-  origin: ./hugo-builder
-  var:
-    version: 0.88.1
+builder: ./hugo-builder
+
+var:
+  version: 0.88.1
 
 
 provision:
-  - pkg: git
+  - pkg: 
+     name: git
+     update: true
   - copy:
       builder: hugo
       todir: /usr/local/bin

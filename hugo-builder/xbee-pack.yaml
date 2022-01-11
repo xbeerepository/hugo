@@ -4,11 +4,7 @@ type: builder
 
 dependency: golang
 
-var:
-  version: 0.88.1
-
 provision:
-  - pkg: build-essential
   - url: 
       from: https://github.com/gohugoio/hugo/archive/refs/tags/v{% version %}.tar.gz
       todir: /hugo
