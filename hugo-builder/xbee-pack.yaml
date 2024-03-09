@@ -4,17 +4,17 @@ type: builder
 
 dependency: golang
 
-in:
+var:
     version:
 
 provision:
   - url: 
-      from: https://github.com/gohugoio/hugo/archive/refs/tags/v{% version %}.tar.gz
+      from: https://github.com/gohugoio/hugo/archive/refs/tags/v{{ .version }}.tar.gz
       todir: /hugo
-  - folder: "{% xbeeOut %}/usr/local/bin"
+  - folder: "{{ .xbee.out }}/usr/local/bin"
 
 build:
   - shell:
       cmd: go install --tags extended
-      directory: /hugo/hugo-{% version %}
-  - shell: cp /root/go/bin/hugo {% xbeeOut %}/usr/local/bin
+      directory: /hugo/hugo-{{ .version }}
+  - shell: cp /root/go/bin/hugo {{ .xbee.out }}/usr/local/bin

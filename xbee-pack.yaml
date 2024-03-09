@@ -1,10 +1,10 @@
 schema-version: 1.0
 
 
-dependency: ./hugo-builder
+builder: ./hugo-builder
 
-in:
-  version: 0.110.0
+var:
+  version: 0.123.8
 
 
 provision:
