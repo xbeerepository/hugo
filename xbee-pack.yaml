@@ -14,4 +14,4 @@ provision:
 
 
 command:
-  hugo: hugo {{ .args }}
+  hugo: hugo
