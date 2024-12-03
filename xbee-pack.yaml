@@ -3,15 +3,11 @@ schema-version: 1.0
 
 builder: ./hugo-builder
 
+dependency: git
+
 var:
-  version: 0.123.8
-
-
-provision:
-  - pkg: 
-     name: git
-     update: true
-
+  xbee:
+    version: 0.139.3
 
 command:
   hugo: hugo

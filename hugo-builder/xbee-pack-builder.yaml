@@ -1,20 +1,15 @@
 schema-version: 1.0
 
-type: builder
-
 dependency: golang
-
-var:
-    version:
 
 provision:
   - url: 
-      from: https://github.com/gohugoio/hugo/archive/refs/tags/v{{ .version }}.tar.gz
+      from: https://github.com/gohugoio/hugo/archive/refs/tags/v{{ .xbee.version }}.tar.gz
       todir: /hugo
   - folder: "{{ .xbee.out }}/usr/local/bin"
 
 build:
   - shell:
       cmd: go install --tags extended
-      directory: /hugo/hugo-{{ .version }}
+      directory: /hugo/hugo-{{ .xbee.version }}
   - shell: cp /root/go/bin/hugo {{ .xbee.out }}/usr/local/bin
