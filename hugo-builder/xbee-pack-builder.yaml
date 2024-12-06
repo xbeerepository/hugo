@@ -10,6 +10,6 @@ provision:
 
 build:
   - shell:
-      cmd: go install --tags extended,deploy
+      cmd: go install --tags extended,withdeploy
       directory: /hugo/hugo-{{ .xbee.version }}
   - shell: cp /root/go/bin/hugo {{ .xbee.out }}/usr/local/bin
