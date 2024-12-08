@@ -7,7 +7,13 @@ dependency: git
 
 var:
   xbee:
-    version: 0.123.8
+    version: 0.139.3
+#    version: 0.123.8
+
+bind:
+  home:
+    from: $HOME
+    to: /home/{{ .xbee.user }}
 
 command:
   hugo: hugo
