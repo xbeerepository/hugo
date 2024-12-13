@@ -11,9 +11,9 @@ var:
 #    version: 0.123.8
 
 bind:
-  home:
-    from: $HOME
-    to: /home/{{ .xbee.user }}
+  aws:
+    from: $HOME/.aws
+    to: /home/{{ .xbee.user }}/.aws
 
 command:
   hugo: hugo
