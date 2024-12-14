@@ -8,6 +8,8 @@ dependency: git
 var:
   xbee:
     version: 0.139.3
+    user: ubuntu
+    group: ubuntu
 #    version: 0.123.8
 
 bind:
